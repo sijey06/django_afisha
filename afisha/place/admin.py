@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Place, Image
+from .models import Image, Place
 
 
 class ImageInline(admin.TabularInline):
     model = Image
-    fields = ('image', 'preview_image')
+    fields = ('order_num', 'image', 'preview_image')
     readonly_fields = ('preview_image', )
     extra = 1
 

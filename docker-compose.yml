@@ -1,0 +1,29 @@
+volumes:
+  pg_data:
+  static:
+  media:
+
+services:
+  db:
+    image: postgres:latest
+    env_file: .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  backend:
+    image: insparation06/django_afisha_backend
+    env_file: .env
+    volumes:
+      - static:/backend_static
+      - media:/media
+    depends_on:
+      - db
+  nginx:
+    image: insparation06/django_afisha_nginx
+    env_file: .env
+    ports:
+      - 8000:80
+    volumes:
+      - static:/backend_static
+      - media:/media
+    depends_on:
+      - backend
