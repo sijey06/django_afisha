@@ -21,7 +21,7 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
-          context: ./backend/
+          context: ./afisha/
           push: true
           tags: insparation06/django_afisha_backend:latest
   Build_Nginx_and_push_to_docker_hub:
