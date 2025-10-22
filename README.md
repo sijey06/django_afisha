@@ -97,7 +97,7 @@ https://github.com/sijey06/django_afisha.git
 ```
 2. Перейдите в директорию с проектом:
 ```
-cd authorisation_project
+cd django_afisha
 ```
 3. Создайте файл .env на основе примера:
 ```
