@@ -6,7 +6,7 @@ from .models import Image, Place
 
 class ImageInline(admin.TabularInline):
     model = Image
-    fields = ('order_num', 'image', 'preview_image')
+    fields = ('image', 'preview_image')
     readonly_fields = ('preview_image', )
     extra = 1
 
